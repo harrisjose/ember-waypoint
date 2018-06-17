@@ -17,7 +17,6 @@ module.exports = {
   rules: {
   },
   overrides: [
-    // node files
     {
       files: [
         'index.js',

@@ -1,0 +1,27 @@
+<div class="app-hero">
+  <p class="hero-header">
+    Execute a function whenever you scroll to an element.
+    Build things like lazy loading images, infinite scroll and scrollspies.
+  </p>
+  <div class="hero-cta">ember install ember-waypoint</div>
+</div>
+
+<div class="demo-container">
+  <h2 class="text-light mb-extra">Usage</h2>
+
+  {{#code-block language="handlebars" class="snippet"}}
+    {{example1.snippet}}
+  {{/code-block}}
+  <div class="snippet-status {{example1.status}}">
+    {{example1.statusMsg}}
+  </div>
+
+  <div style="margin-top: 150px;"></div>
+
+  {{#way-point
+    onEnter=(action "changeStatus" "example1" true)
+    onLeave=(action "changeStatus" "example1" false)
+  }}
+    <div class="marker"></div>
+  {{/way-point}}
+</div>

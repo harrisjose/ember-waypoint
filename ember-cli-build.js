@@ -4,7 +4,16 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
-    // Add options here
+    svg: {
+      paths: [
+        'tests/dummy/app/svgs'
+      ]
+    },
+    'ember-prism': {
+      'theme': 'okaidia',
+      'components': ['handlebars', 'markup', 'javascript', 'markup-templating'],
+      'plugins': []
+    }
   });
 
   /*
