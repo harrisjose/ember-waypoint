@@ -5,7 +5,6 @@ Execute a function whenever you scroll to an element. Uses the shiny new Interse
 
 Ember Waypoint can be used to build things like lazy loading images, infinite scroll, scrollspies, or docking elements to the viewport on scroll. [View the demo.](harrisjose.github.io/ember-waypoint)
 
-
 Installation
 ------------------------------------------------------------------------------
 
@@ -15,19 +14,18 @@ ember install ember-waypoint
 
 Ember Waypoint includes [this polyfill](https://www.npmjs.com/package/intersection-observer) since the intersection observer is still a wip in [some browsers](https://caniuse.com/#feat=intersectionobserver). Further versions might exclude the polyfill as browser support improves.
 
+I'm very open to feedback on this addon. I made this because I was using intersection observers for a couple of different cases but if you have a cool idea or suggestion to make this better, please let me know :)
+
 Usage
 ------------------------------------------------------------------------------
 
-Suppose we need to show a 'scroll to top' button by figuring out if the user has scrolled down to a certain part of the page. An easy way to do this would be adding,
+Suppose we need to show a 'scroll to top' button by figuring out if the user has scrolled down to a certain part of the page. An easy way to do this would be,
 
 ```hbs
 {{way-point onEnter=(action "showScrollUp") onLeave=(action "hideScrollUp")}}
 ```
 
-In this case, you could think of the way-point as a line across the page.
-
-
-To do stuff when certain elements enter the viewport, you can wrap them with the way-point component.
+In this case, you could think of the way-point as a line across the page. To do stuff when certain elements enter the viewport, you can wrap them with the way-point component.
 
 ```hbs
 {{#way-point
@@ -42,14 +40,16 @@ To do stuff when certain elements enter the viewport, you can wrap them with the
 {{/way-point}}
 ``` 
 
-Ember Waypoint supports the following actions and props,
+### Callbacks
 
-### Actions
+Ember-Waypoint accepts closure actions for it's callbacks. 
 
 * onEnter - Called when any part of the child is visible in the viewport
 * onLeave - Called when all of the child has exited the viewport.
 
-> Keep in mind that an element outside the viewport can be on either side of it (top or bottom), so there are always two positions when the onLeave and onEnter callbacks will be called.
+An element outside the viewport can be on either at the top or at the bottom, so there are always two positions when the onLeave and onEnter callbacks will be called.
+
+All callbacks receive an array of [intersection observer entries](https://developer.mozilla.org/en-US/docs/Web/API/IntersectionObserverEntry) as it's final argument.
 
 ### Props
 
