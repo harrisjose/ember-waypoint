@@ -6,8 +6,8 @@
   <div class="hero-cta">ember install ember-waypoint</div>
 </div>
 
-<div class="demo-container">
-  <h2 class="text-light mb-extra">Usage</h2>
+<div>
+  <div style="margin-top: 100px;"></div>
 
   {{#code-block language="handlebars" class="snippet"}}
     {{example1.snippet}}
@@ -16,12 +16,35 @@
     {{example1.statusMsg}}
   </div>
 
-  <div style="margin-top: 150px;"></div>
+  <div style="margin-top: 170px;"></div>
 
   {{#way-point
-    onEnter=(action "changeStatus" "example1" true)
-    onLeave=(action "changeStatus" "example1" false)
+    onEnter=(action "changeStatus" true)
+    onLeave=(action "changeStatus" false)
   }}
     <div class="marker"></div>
   {{/way-point}}
+
+  <div style="margin-top: 150px;"></div>
+
+  {{#code-block language="handlebars" class="snippet"}}
+    {{example2.snippet}}
+  {{/code-block}}
+  <div class="snippet-status {{example2.status}}">
+    {{example2.statusMsg}}
+  </div>
+
+  <div style="margin-top: 120px;"></div>
+
+  {{#way-point onEnter=(action "showImage") threshold="0.5"}}
+    {{#if example2.canShowImage}}
+      <div style="min-height: 250px;"><img src="images/nyancat.svg" width="300px"/></div>
+    {{/if}}
+  {{/way-point}}
+
+  <div style="margin-top: 50px;"></div>
+
+  <div class="footer">
+    <a href="https://github.com/harrisjose">Made by @harrisjose</a>
+  </div>
 </div>

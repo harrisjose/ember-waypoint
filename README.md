@@ -1,6 +1,8 @@
 ember-waypoint
 ==============================================================================
 
+> I'm very open to feedback on this addon. I made this because I was using intersection observers for a couple of different things and thought it'd be cool to have an easier way to use them. If you have a cool idea or suggestion to make this better, please let me know :)
+
 Execute a function whenever you scroll to an element. Uses the shiny new Intersection Observer API under the hood. Inspired by [Waypoints](https://github.com/imakewebthings/waypoints) and the excellent [React Waypoint](https://github.com/brigade/react-waypoint).
 
 Ember Waypoint can be used to build things like lazy loading images, infinite scroll, scrollspies, or docking elements to the viewport on scroll. [View the demo.](harrisjose.github.io/ember-waypoint)
@@ -13,8 +15,6 @@ ember install ember-waypoint
 ```
 
 Ember Waypoint includes [this polyfill](https://www.npmjs.com/package/intersection-observer) since the intersection observer is still a wip in [some browsers](https://caniuse.com/#feat=intersectionobserver). Further versions might exclude the polyfill as browser support improves.
-
-I'm very open to feedback on this addon. I made this because I was using intersection observers for a couple of different cases but if you have a cool idea or suggestion to make this better, please let me know :)
 
 Usage
 ------------------------------------------------------------------------------
@@ -54,21 +54,8 @@ All callbacks receive an array of [intersection observer entries](https://develo
 ### Props
 
 * rootElement - The element that is used as the viewport for checking visiblity. Defaults to the browser viewport if not specified.
-* threshold - Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed.
+* threshold - Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. Interpolates to the threshold property in the Intersection Observer API.
 * offsets - Margin around the root. Can have values similar to the CSS margin property, e.g. "10px 20px 30px 40px" (top, right, bottom, left).
-
-Contributing
-------------------------------------------------------------------------------
-
-### Installation
-
-* `git clone <repository-url>`
-* `cd ember-waypoint`
-* `npm install`
-
-### Running tests
-
-* `npm test` – Runs `ember try:each` to test your addon against multiple Ember versions
 
 License
 ------------------------------------------------------------------------------

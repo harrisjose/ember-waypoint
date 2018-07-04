@@ -46,7 +46,7 @@ export default Component.extend({
       options['root'] = customRootElement;
     }
     if(threshold) {
-      options['threshold'] = threshold;
+      options['threshold'] = Number(threshold);
     }
     if(offsets) {
       options['rootMargin'] = offsets;
