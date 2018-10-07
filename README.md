@@ -5,7 +5,9 @@ ember-waypoint
 
 Execute a function whenever you scroll to an element. Uses the shiny new Intersection Observer API under the hood. Inspired by [Waypoints](https://github.com/imakewebthings/waypoints) and the excellent [React Waypoint](https://github.com/brigade/react-waypoint).
 
-Ember Waypoint can be used to build things like lazy loading images, infinite scroll, scrollspies, or docking elements to the viewport on scroll. [View the demo.](harrisjose.github.io/ember-waypoint)
+Ember Waypoint can be used to build things like lazy loading images, infinite scroll, scrollspies, or docking elements to the viewport on scroll.
+
+[View the demo.](https://harrisjose.github.io/ember-waypoint)
 
 Installation
 ------------------------------------------------------------------------------
@@ -28,13 +30,13 @@ Suppose we need to show a 'scroll to top' button by figuring out if the user has
 In this case, you could think of the way-point as a line across the page. To do stuff when certain elements enter the viewport, you can wrap them with the way-point component.
 
 ```hbs
-{{#way-point
-  onEnter=(action "isVisible" true)
-  onLeave=(action "isVisible" false)
-  rootElement="#container"
-}}
+{{#way-point onEnter=(action "toggleVisibility" true)}}
   <div class="media">
-    <img src="profile.jpg"/>
+    {{#if isVisible}}
+      <img src="profile.jpg"/>
+    {{else}}
+      <img src="placeholder.jpg"/>
+    {{/if}}
     <p>{{name}}</p>
   </div>
 {{/way-point}}
@@ -53,9 +55,9 @@ All callbacks receive an array of [intersection observer entries](https://develo
 
 ### Props
 
-* rootElement - The element that is used as the viewport for checking visiblity. Defaults to the browser viewport if not specified.
-* threshold - Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. Interpolates to the threshold property in the Intersection Observer API.
-* offsets - Margin around the root. Can have values similar to the CSS margin property, e.g. "10px 20px 30px 40px" (top, right, bottom, left).
+* **rootElement** - The element that is used as the viewport for checking visiblity. Defaults to the browser viewport if not specified.
+* **threshold** - Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. Interpolates to the threshold property in the Intersection Observer API.
+* **offsets** - Margin around the root. Can have values similar to the CSS margin property, e.g. "10px 20px 30px 40px" (top, right, bottom, left). Interpolates to the rootMargin property in the Intersection Observer API.
 
 License
 ------------------------------------------------------------------------------
