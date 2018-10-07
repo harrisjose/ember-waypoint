@@ -1,0 +1,151 @@
+body {
+  background-color: #000;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1px;
+}
+
+a {
+  color: #0C7FFF;
+  text-decoration: none;
+}
+
+.app-container {
+  max-width: 980px;
+  margin: 50px auto 30px;
+  padding: 15px 35px;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.app-hero {
+  color: #FFFFFF;
+  margin: 40px auto;
+}
+
+.hero-header {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin: 0 auto 45px;
+  max-width: 768px;
+}
+
+.hero-cta {
+  font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 1rem;
+  background: #E24329;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 32px;
+  padding: 10px 22px;
+  user-select: all;
+}
+
+@media screen and (max-width: 450px) {
+  .app-container {
+    padding: 15px;
+    margin-top: 10px;
+  }
+  .hero-header {
+    font-size: 1rem;
+  }
+  .hero-cta {
+    font-size: 0.95rem;
+  }
+}
+
+.footer a {
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 600; 
+}
+
+pre[class*="snippet"] {
+  max-width: 620px;
+  margin: 0 auto !important;
+  font-size: 14px;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.snippet-status {
+  background-color: #cdcdcd;
+  max-width: 620px;
+  margin: 0 auto !important;
+  padding: 14px;
+  border-bottom-right-radius: 0.3em;
+  border-bottom-left-radius: 0.3em;
+  transition: all 400ms ease-in-out;
+}
+.snippet-status.in {
+  background-color: #2BB772;
+}
+.snippet-status.out {
+  background-color: #e29829;
+}
+
+.marker {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: 15px solid #5a180e;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #E04E39;
+}
+
+.mb-extra {
+  margin-bottom: 40px;
+}
+.mt-extra {
+  margin-top: 40px;
+}
+
+
+.text-orange {
+  color: #E04E39;
+}
+.text-center {
+  text-align: center;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-light {
+  font-weight: 300;
+}
+
+.text-shimmer {
+  background: #cdcdcd -webkit-gradient(linear, 100% 0, 0 0, from(#fff), color-stop(0.5, #fff), to(#fff));
+  background-position: -4rem top;
+  background-repeat: no-repeat;
+  background-clip: text;
+  background-size: 4rem 100%;
+  -webkit-background-clip: text;
+  -webkit-background-size: 4rem 100%;
+  -webkit-text-fill-color: transparent;
+
+  animation-name: shimmer;
+  animation-duration: 100ms;
+  animation-iteration-count: infinite;
+  -webkit-animation-name: shimmer;
+  -webkit-animation-duration: 2.2s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes shimmer {
+  50% {
+      background-position: -4rem top; /*50px*/
+  }
+
+  70% {
+      background-position: 12.5rem top; /*200px*/
+  }
+
+  100% {
+      background-position: 12.5rem top; /*200px*/
+  }
+}
